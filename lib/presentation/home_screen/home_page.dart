@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
             ExperienceSection(),
             // // Contact Us Section
             ContactUs(),
-            SizedBox(height: 25)
+           
       ],)
     
     );

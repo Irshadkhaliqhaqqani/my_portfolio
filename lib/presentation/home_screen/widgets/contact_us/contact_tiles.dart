@@ -19,50 +19,43 @@ class ContactTiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMobile=MediaQuery.of(context).size.width<800;
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal:isMobile?10: 20, vertical: 5),
-      height:isMobile?50: 60,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(AppSizes.radiusCircular),
-        gradient: LinearGradient(
-          colors: [Color(0xFF262626), Color(0xFF101010)],
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          // Icon
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
+    return  Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        // Icon
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: AppColors.secondary,
+                shape: BoxShape.circle
+              ),
+              child: SvgPicture.asset(
                 svgName,
-                height:isMobile?22: 35,
+                height:isMobile?22: 30,
                 colorFilter: const ColorFilter.mode(
                   Colors.white,
                   BlendMode.srcIn,
                 ),
               ),
-              SizedBox(width:isMobile?10: 20),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    heading,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize:isMobile?14: 16),
-                  ),
-                  Text(bodyText, style: TextStyle(color: AppColors.secondary)),
-                ],
-              ),
-            ],
-          ),
-          SvgPicture.asset(
-            lastSvgName,
-            height:isMobile?22: 30,
-            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-          ),
-        ],
-      ),
+            ),
+            SizedBox(width:isMobile?10: 20),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  heading,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize:isMobile?14: 16),
+                ),
+                Text(bodyText, style: TextStyle(color: AppColors.secondary)),
+              ],
+            ),
+          ],
+        ),
+        
+      ],
     );
   }
 }

@@ -1,61 +1,109 @@
 import 'package:flutter/material.dart';
-import 'package:my_new_portfolio/core/constraints/app_sizes.dart';
+import 'package:my_new_portfolio/core/constraints/app_colors.dart';
 import 'package:my_new_portfolio/core/constraints/app_styles.dart';
 import 'package:my_new_portfolio/presentation/home_screen/widgets/contact_us/contact_tiles.dart';
+import 'package:my_new_portfolio/presentation/home_screen/widgets/contact_us/svg_decoration.dart';
+import 'package:my_new_portfolio/presentation/home_screen/widgets/contact_us/user_input.dart';
+import 'package:my_new_portfolio/presentation/home_screen/widgets/contact_us/user_input_button.dart';
 
 class ContactUs extends StatelessWidget {
   const ContactUs({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final List<String> svgUrl = [
+      "assets/svgs/github-brands-solid-full.svg",
+      "assets/svgs/linkedin-in-brands-solid-full.svg",
+      "assets/svgs/facebook-f-brands-solid-full.svg",
+      "assets/svgs/tiktok-brands-solid-full.svg",
+    ];
     final isMobile = MediaQuery.of(context).size.width < 800;
-
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: isMobile ? 10 : 0),
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: isMobile ? 10 : 60, vertical: isMobile?10: 30),
+      color: Colors.black12,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // first
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 20),
-            height:isMobile?240: 300,
-            width:isMobile? MediaQuery.of(context).size.width * 0.6:MediaQuery.of(context).size.width * 0.4,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-
-              children: [
-                // Title
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text("Get In Touch", style: AppStyles.heading2),
-                    Text(
-                      "Let's build something together :)",
-                      style: AppStyles.bodyText,
-                    ),
-                  ],
+          // Title
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("Get In Touch", style: AppStyles.heading2),
+              Text(
+                "Let's build something together :)",
+                style: AppStyles.bodyText,
+              ),
+            ],
+          ),
+          SizedBox(height: 30),
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  height: isMobile ? 240 : 300,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ContactTiles(
+                        heading: "Email",
+                        bodyText: "khaliqhaqqaniirshd@gmail.com",
+                        svgName: "assets/svgs/envelope-solid-full.svg",
+                        lastSvgName:
+                            "assets/svgs/location-arrow-solid-full.svg",
+                      ),
+                      ContactTiles(
+                        heading: "Contact No",
+                        bodyText: "khaliqhaqqaniirshd@gmail.com",
+                        svgName: "assets/svgs/phone-solid-full.svg",
+                        lastSvgName:
+                            "assets/svgs/location-arrow-solid-full.svg",
+                      ),
+                      ContactTiles(
+                        heading: "Location",
+                        bodyText: "Software Techonolgy Park Skardu",
+                        svgName: "assets/svgs/location-arrow-solid-full.svg",
+                        lastSvgName:
+                            "assets/svgs/location-arrow-solid-full.svg",
+                      ),
+                      Row(
+                        children: [
+                          SvgDecoration(svgName: svgUrl[0]),
+                          SizedBox(width: 15),
+                          SvgDecoration(svgName: svgUrl[1]),
+                          SizedBox(width: 15),
+                          SvgDecoration(svgName: svgUrl[2]),
+                          SizedBox(width: 15),
+                          SvgDecoration(svgName: svgUrl[3]),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-                ContactTiles(
-                  heading: "Email",
-                  bodyText: "khaliqhaqqaniirshd@gmail.com",
-                  svgName: "assets/svgs/envelope-solid-full.svg",
-                  lastSvgName: "assets/svgs/location-arrow-solid-full.svg",
+              ),
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  height: isMobile ? 240 : 300,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      UserInput(inputHintText: 'Full Name*'),
+                      UserInput(inputHintText: 'Contact no*'),
+                      UserInput(inputHintText: 'Message*'),
+                      UserInputButton(),
+                    ],
+                  ),
                 ),
-                ContactTiles(
-                  heading: "Contact No",
-                  bodyText: "khaliqhaqqaniirshd@gmail.com",
-                  svgName: "assets/svgs/phone-solid-full.svg",
-                  lastSvgName: "assets/svgs/location-arrow-solid-full.svg",
-                ),
-                ContactTiles(
-                  heading: "Location",
-                  bodyText: "Software Techonolgy Park Skardu",
-                  svgName: "assets/svgs/location-arrow-solid-full.svg",
-                  lastSvgName: "assets/svgs/location-arrow-solid-full.svg",
-                ),
-              ],
-            ),
+              ),
+            ],
+          ),
+          SizedBox(height: 25),
+          Text(
+            "Designed and Develop by Irshadkhaliqhaqqani",
+            style: TextStyle(fontSize: 12, color: AppColors.secondary),
           ),
         ],
       ),
