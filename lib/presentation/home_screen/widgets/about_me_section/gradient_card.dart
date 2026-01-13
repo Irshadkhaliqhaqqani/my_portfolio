@@ -8,7 +8,7 @@ Widget gradientCard(BuildContext context, String text, Gradient gradient) {
   final isMobile = MediaQuery.of(context).size.width < 800;
 
   return ClipRRect(
-    borderRadius: BorderRadius.circular(16),
+    borderRadius: BorderRadius.circular(isMobile?8:16),
     child: Stack(
       children: [
         // Backgdrop Effect
@@ -23,7 +23,7 @@ Widget gradientCard(BuildContext context, String text, Gradient gradient) {
         // Gradient Card
         Container(
           padding: EdgeInsets.only(
-            left: isMobile ? 2 : 20,
+            left: isMobile ? 5 : 20,
             right: isMobile ? 2 : 200,
           ),
           decoration: BoxDecoration(

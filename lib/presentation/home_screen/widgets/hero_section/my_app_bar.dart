@@ -9,20 +9,23 @@ class MyAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final isMobile = MediaQuery.of(context).size.width < 800;
     return ResponsiveLayout(
-      mobile: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          // logo
-          Text(
-            "Ikhaqqani",
-            style: GoogleFonts.cookie(
-              color: Color(0xFF8B00B4),
-              fontWeight: FontWeight.bold,
+      mobile: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // logo
+            Text(
+              "Ikhaqqani",
+              style: GoogleFonts.cookie(
+                color: Color(0xFF8B00B4),
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          // Appbar menu
-          Icon(Icons.menu),
-        ],
+            // Appbar menu
+            Icon(Icons.menu),
+          ],
+        ),
       ),
       desktop: Padding(
         padding: EdgeInsets.only(right: 80, left: 80, top: 40),

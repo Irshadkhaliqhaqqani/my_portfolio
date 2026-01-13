@@ -9,39 +9,36 @@ class AboutMe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveLayout(
-      mobile: Column(
-        children: [
-          Text(
-            "About me",
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 10),
-          Text(
-            "“If you are not going to tell the world who you are, the world is not going to tell you, how good you are.”",
-            style: TextStyle(color: AppColors.secondary),
-          ),
-          // stack for About me Container
-          Stack(
-            clipBehavior: Clip.none,
-            alignment: Alignment.center,
-            children: [
-              // Contaner
-
-              // GridView
-              MyGridView(),
-              // Image
-              Image.asset(
-                "assets/iosphone.png",
-                height: 200,
-                fit: BoxFit.contain,
-                // cacheWidth: 100,
-              ),
-
-              // Conatner
-            ],
-          ),
-          SizedBox(height: 40),
-        ],
+      mobile: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+            SizedBox(height: 10,
+            ),
+            Text(
+              "About me",
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10),
+            Text(
+              textAlign:TextAlign.center,
+              "“If you are not going to tell the world who you are, the world is not going to tell you, how good you are.”",
+              style: TextStyle(color: AppColors.secondary),
+            ),
+            SizedBox(height: 10,),
+                      // Image
+            Image.asset(
+              "assets/iosphone.png",
+              height: 200,
+              fit: BoxFit.contain,
+            
+            ),
+            SizedBox(height: 10),
+            // stack for About me Container
+            MyGridView(),
+            SizedBox(height: 20),
+          ],
+        ),
       ),
       desktop: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 80),

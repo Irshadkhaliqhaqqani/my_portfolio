@@ -37,7 +37,7 @@ class _ExperienceSectionState extends State<ExperienceSection>
   Widget build(BuildContext context) {
     final isMobile = MediaQuery.of(context).size.width < 800;
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: isMobile ? 10 : 80),
+      padding: EdgeInsets.symmetric(horizontal: isMobile ? 10 : 0),
       child: Center(
         child: Container(
           constraints: BoxConstraints(
@@ -117,7 +117,7 @@ class _ExperienceSectionState extends State<ExperienceSection>
                             Positioned(
                               top: 45,
                               right: 40,
-                              child: Image.asset("ex_icons.png", height: 300),
+                              child: Image.asset("assets/experience_image.png", height: 300),
                             ),
                           ],
                         ),

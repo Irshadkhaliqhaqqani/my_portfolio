@@ -14,17 +14,18 @@ class MyGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveLayout(
       mobile: SizedBox(
-        height: 250,
+        height: 400,
         child: GridView(
           physics: NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 1 / 0.45,
+            childAspectRatio: 1 / 1,
           ),
           // childern
           children: [
             textCard(
               "I’m Irshad Khaliq Haqqani, a Flutter Developer with 1.5 years of hands-on experience building cross-platform mobile applications. I’ve worked at Software Technology Park Skardu, delivering real-world apps for  business and service-based clients.",
+              context,
             ),
             gradientCard2(
               context,
@@ -45,6 +46,7 @@ class MyGridView extends StatelessWidget {
             ),
             textCard2(
               "I enjoy turning ideas into reliable products and collaborating closely with teams. Currently, I’m seeking junior or entry-level Flutter developer opportunities to grow and contribute to impactful mobile applications.",
+              context,
             ),
           ],
         ),
@@ -61,6 +63,7 @@ class MyGridView extends StatelessWidget {
           children: [
             textCard(
               "I’m Irshad Khaliq Haqqani, a Flutter Developer with 1.5 years of hands-on experience building cross-platform mobile applications. I’ve worked at Software Technology Park Skardu, delivering real-world apps for  business and service-based clients.",
+              context,
             ),
             gradientCard2(
               context,
@@ -84,6 +87,7 @@ class MyGridView extends StatelessWidget {
             ),
             textCard2(
               "I enjoy turning ideas into reliable products and collaborating closely with teams. Currently, I’m seeking junior or entry-level Flutter developer opportunities to grow and contribute to impactful mobile applications.",
+              context,
             ),
           ],
         ),

@@ -27,11 +27,11 @@ class HomePage extends StatelessWidget {
             TechStackSection(),
             // Performance and Maintanince
             PerformanceAndMaintainanceSection(),
-            //Project Section
+            // Project Section
             ProjectSection(),
             // Experience Section
             ExperienceSection(),
-            // // Contact Us Section
+            // Contact Us Section
             ContactUs(),
            
       ],)
