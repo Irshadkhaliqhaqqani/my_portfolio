@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:my_new_portfolio/core/constraints/app_colors.dart';
+import 'package:my_new_portfolio/core/constraints/app_styles.dart';
 import 'projects_card.dart';
 
 class ProjectSection extends StatelessWidget {
@@ -20,11 +21,11 @@ class ProjectSection extends StatelessWidget {
             "Projects",
             style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
           Text(
             "“A selection of real-world applications I’ve built using Flutter”",
             textAlign: TextAlign.center,
-            style: TextStyle(color: AppColors.secondary),
+            style: AppStyles.bodyText,
           ),
           const SizedBox(height: 30),
 
@@ -93,10 +94,7 @@ class ProjectSection extends StatelessWidget {
           // See More Section
           Column(
             children: [
-              const Text(
-                "See More",
-                style: TextStyle(fontSize: 13, color: AppColors.secondary),
-              ),
+              Text("See More", style: AppStyles.bodyText),
               Divider(
                 thickness: 1.5,
                 color: AppColors.secondary,

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_new_portfolio/core/constraints/app_colors.dart';
+import 'package:my_new_portfolio/core/constraints/app_styles.dart';
 import 'package:my_new_portfolio/core/responsive/responsive_layout.dart';
-import 'package:my_new_portfolio/presentation/home_screen/widgets/about_me_section/my_grid_view.dart';
+import 'package:my_new_portfolio/presentation/home_screen/widgets/about_me_section/gradient_card.dart';
+import 'package:my_new_portfolio/presentation/home_screen/widgets/about_me_section/gradient_card2.dart';
+import 'package:my_new_portfolio/presentation/home_screen/widgets/about_me_section/text_card.dart';
+import 'package:my_new_portfolio/presentation/home_screen/widgets/about_me_section/text_card2.dart';
 
 class AboutMe extends StatelessWidget {
   const AboutMe({super.key});
@@ -18,63 +21,141 @@ class AboutMe extends StatelessWidget {
               "About me",
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 5),
             Text(
               textAlign: TextAlign.center,
-              "“If you are not going to tell the world who you are, the world is not going to tell you, how good you are.”",
-              style: TextStyle(color: AppColors.secondary),
+              "“If you are not going to tell the world \nwho you are, the world is not going to tell you, how good you are.”",
+              style: AppStyles.bodyText,
             ),
-            SizedBox(height: 10),
-            // Image
-            Image.asset(
-              "assets/iosphone.webp",
-              height: 200,
-              fit: BoxFit.contain,
+            // SizedBox(height: 50),
+            Container(
+              width: double.infinity,
+              child: Column(
+                children: [
+                  Image.asset(
+                    "assets/iosphone.webp",
+                    height: 200,
+                    fit: BoxFit.contain,
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 20),
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      // gradient: gradient,
+                      borderRadius: BorderRadius.circular(8),
+                      color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.25),
+                    ),
+                    child: Text(
+                      "I’m Irshad Khaliq Haqqani, a Flutter Developer with 1.5 years of hands-on experience building cross-platform mobile applications. I’ve worked at Software Technology Park Skardu, delivering real-world apps for  business and service-based clients.",
+                      style: AppStyles.bodyText,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  gradientCard(
+                    context,
+                    "Intermediate from Boys Degree College Khalpu(ICS).\nGraduation from University of Baltistan Skardu(BSCS)",
+                    LinearGradient(
+                      colors: [
+                        Color(0xFF101010).withOpacity(0.85),
+                        Color(0xFF262626).withOpacity(0.85),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  gradientCard2(
+                    context,
+                    "Flutter & Mobile Development \nState Management (Provider, GetX) \nBackend & APIs (Firebase, REST) \nTools (Git, VS Code, Android Studio)",
+                    LinearGradient(
+                      colors: [
+                        const Color(0xFF101010).withOpacity(0.85),
+                        const Color(0xFF262626).withOpacity(0.85),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                ],
+              ),
             ),
-            SizedBox(height: 10),
-            // stack for About me Container
-            MyGridView(),
-            SizedBox(height: 20),
           ],
         ),
       ),
       desktop: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 80),
-        child: SizedBox(
-          height: 800,
-          child: Column(
-            children: [
-              SizedBox(height: 10),
-              Text(
-                "About me",
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 10),
-              Text(
-                textAlign: TextAlign.center,
-                "“If you are not going to tell the world \nwho you are, the world is not going to tell you, how good you are.”",
-                style: TextStyle(color: AppColors.secondary),
-              ),
-              SizedBox(height: 50),
-              Stack(
+        child: Column(
+          children: [
+            SizedBox(height: 50),
+            Text(
+              "About me",
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 5),
+            Text(
+              textAlign: TextAlign.center,
+              "“If you are not going to tell the world \nwho you are, the world is not going to tell you, how good you are.”",
+              style: AppStyles.bodyText,
+            ),
+            // SizedBox(height: 50),
+            Container(
+              width: double.infinity,
+              child: Stack(
                 alignment: Alignment.center,
                 clipBehavior: Clip.none,
                 children: [
-                  // glow circles
-                  Positioned(child: _GlowCircle()),
-                  MyGridView(),
+                  _GlowCircle(),
                   Positioned(
-                    top: -50,
-                    child: Image.asset(
-                      "assets/iosphone.webp",
-                      height: 650,
-                      fit: BoxFit.contain,
+                    bottom: 40,
+                    left: 0,
+                    child: gradientCard(
+                      context,
+                      "Intermediate from Boys Degree College Khalpu(ICS).\nGraduation from University of Baltistan Skardu(BSCS)",
+                      LinearGradient(
+                        colors: [
+                          Color(0xFF101010).withOpacity(0.85),
+                          Color(0xFF262626).withOpacity(0.85),
+                        ],
+                      ),
                     ),
+                  ),
+                  Positioned(
+                    right: 0,
+                    top: 40,
+                    child: gradientCard2(
+                      context,
+                      "Flutter & Mobile Development \nState Management (Provider, GetX) \nBackend & APIs (Firebase, REST) \nTools (Git, VS Code, Android Studio)",
+                      LinearGradient(
+                        colors: [
+                          const Color(0xFF101010).withOpacity(0.85),
+                          const Color(0xFF262626).withOpacity(0.85),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 100,
+                    left: 0,
+                    child: textCard(
+                      "I’m Irshad Khaliq Haqqani, a Flutter Developer with 1.5 years of hands-on experience building cross-platform mobile applications. I’ve worked at Software Technology Park Skardu, delivering real-world apps for  business and service-based clients.",
+                      context,
+                    ),
+                  ),
+                  Positioned(
+                    right: 0,
+                    bottom: 100,
+                    child: textCard2(
+                      "I enjoy turning ideas into reliable products and collaborating closely with teams. Currently, I’m seeking junior or entry-level Flutter developer opportunities to grow and contribute to impactful mobile applications.",
+                      context,
+                    ),
+                  ),
+                  Image.asset(
+                    "assets/iosphone.webp",
+                    height: 550,
+                    fit: BoxFit.contain,
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+            SizedBox(height: 20),
+          ],
         ),
       ),
     );

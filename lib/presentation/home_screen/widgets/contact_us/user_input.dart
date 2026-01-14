@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_new_portfolio/core/constraints/app_styles.dart';
 
 class UserInput extends StatelessWidget {
   final String inputHintText;
@@ -11,7 +12,7 @@ class UserInput extends StatelessWidget {
       controller: _controller,
       decoration: InputDecoration(
         hintText: inputHintText,
-        hintStyle: TextStyle(fontWeight: FontWeight.bold),
+        hintStyle: AppStyles.bodyText,
       ),
     );
   }

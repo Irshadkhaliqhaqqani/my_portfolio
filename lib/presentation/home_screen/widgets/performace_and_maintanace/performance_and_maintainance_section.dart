@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:my_new_portfolio/core/constraints/app_colors.dart';
 import 'package:my_new_portfolio/core/constraints/app_sizes.dart';
+import 'package:my_new_portfolio/core/constraints/app_styles.dart';
 import 'package:my_new_portfolio/core/responsive/responsive_layout.dart';
 
 class PerformanceAndMaintainanceSection extends StatelessWidget {
@@ -23,11 +24,11 @@ class PerformanceAndMaintainanceSection extends StatelessWidget {
                 "Performance & Maintenance",
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 5),
               Text(
                 textAlign: TextAlign.center,
                 "“Reliable apps built for speed, stability, and long-term success.”",
-                style: TextStyle(color: AppColors.secondary),
+                style: AppStyles.bodyText,
               ),
               SizedBox(height: 20),
               // Contnaner
@@ -100,11 +101,7 @@ class PerformanceAndMaintainanceSection extends StatelessWidget {
                   ),
                   Text(
                     "I build high-performance applications optimized for speed, responsiveness, and scalability across all devices.",
-                    style: TextStyle(
-                      height: isMobile ? 0 : 1.5,
-                      fontSize: isMobile ? 12 : 14,
-                      color: AppColors.secondary,
-                    ),
+                    style: AppStyles.bodyText,
                   ),
                   SizedBox(height: 15),
                   Text(
@@ -117,11 +114,7 @@ class PerformanceAndMaintainanceSection extends StatelessWidget {
                   ),
                   Text(
                     "I build high-performance applications optimized for speed, responsiveness, and scalability across all devices.",
-                    style: TextStyle(
-                      height: isMobile ? 0 : 1.5,
-                      fontSize: isMobile ? 12 : 14,
-                      color: AppColors.secondary,
-                    ),
+                    style: AppStyles.bodyText,
                   ),
                   SizedBox(height: 20),
                 ],
@@ -133,7 +126,7 @@ class PerformanceAndMaintainanceSection extends StatelessWidget {
       desktop: Padding(
         padding: EdgeInsets.symmetric(horizontal: 80),
         child: Container(
-          constraints: BoxConstraints(maxWidth: 1140),
+          constraints: BoxConstraints(maxWidth: 1440),
           child: Column(
             children: [
               SizedBox(height: 50),
@@ -142,10 +135,10 @@ class PerformanceAndMaintainanceSection extends StatelessWidget {
                 "Performance & Maintenance",
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 5),
               Text(
                 "“Reliable apps built for speed, stability, and long-term success.”",
-                style: TextStyle(color: AppColors.secondary),
+                style: AppStyles.bodyText,
               ),
               SizedBox(height: 20),
 
@@ -213,11 +206,7 @@ class PerformanceAndMaintainanceSection extends StatelessWidget {
                           ),
                           Text(
                             "I build high-performance applications optimized for speed, responsiveness, and scalability across all devices.",
-                            style: TextStyle(
-                              height: isMobile ? 0 : 1.5,
-                              fontSize: isMobile ? 12 : 14,
-                              color: Colors.white,
-                            ),
+                            style: AppStyles.bodyText,
                           ),
                         ],
                       ),
@@ -243,11 +232,7 @@ class PerformanceAndMaintainanceSection extends StatelessWidget {
                           ),
                           Text(
                             "I build high-performance applications optimized for speed, responsiveness, and scalability across all devices.",
-                            style: TextStyle(
-                              height: isMobile ? 0 : 1.5,
-                              fontSize: isMobile ? 12 : 14,
-                              color: Colors.white,
-                            ),
+                            style: AppStyles.bodyText,
                           ),
                         ],
                       ),

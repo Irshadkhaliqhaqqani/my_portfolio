@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:my_new_portfolio/core/constraints/app_styles.dart';
 
 class OtherSkillsChips extends StatelessWidget {
   final String svgPictures;
@@ -13,7 +13,7 @@ class OtherSkillsChips extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMobile= MediaQuery.of(context).size.width<800;
+    final isMobile = MediaQuery.of(context).size.width < 800;
     return Container(
       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       decoration: BoxDecoration(
@@ -29,11 +29,11 @@ class OtherSkillsChips extends StatelessWidget {
           SvgPicture.asset(
             svgPictures,
             colorFilter: const ColorFilter.mode(Colors.cyan, BlendMode.srcIn),
-            width:isMobile?15: 22,
+            width: isMobile ? 15 : 22,
           ),
           SizedBox(width: 5),
           // Text
-          Text(iconTexts, style: TextStyle(fontSize: isMobile?10:14), ),
+          Text(iconTexts, style: AppStyles.bodyText),
         ],
       ),
     );

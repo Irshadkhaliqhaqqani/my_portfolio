@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_new_portfolio/core/constraints/app_colors.dart';
+import 'package:my_new_portfolio/core/constraints/app_styles.dart';
 import 'package:my_new_portfolio/presentation/home_screen/widgets/tech_stack_widgets/other_skills_chips.dart';
 import 'package:my_new_portfolio/presentation/home_screen/widgets/tech_stack_widgets/tech_chips.dart';
 import 'package:my_new_portfolio/presentation/home_screen/widgets/tech_stack_widgets/tech_stack_group.dart';
@@ -100,17 +101,17 @@ class TechStackSection extends StatelessWidget {
             "Tech Stack",
             style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
           isMobile
               ? Text(
                   textAlign: TextAlign.center,
                   "“Change is inevitable, so I keep on exploring new technology, learn it in a minimal possible way and then build something out of it to see how well I did :)”",
-                  style: TextStyle(color: AppColors.secondary),
+                  style: AppStyles.bodyText,
                 )
               : Text(
                   textAlign: TextAlign.center,
                   "“Change is inevitable, so I keep on exploring new technology, \nlearn it in a minimal possible way and then build something out of it to see how well I did :)”",
-                  style: TextStyle(color: AppColors.secondary),
+                  style: AppStyles.bodyText,
                 ),
           SizedBox(height: 20),
 
@@ -153,10 +154,7 @@ class TechStackSection extends StatelessWidget {
                         Text(
                           textAlign: TextAlign.center,
                           "I build scalable cross-platform applications using Flutter, Firebase, and clean state management practices.",
-                          style: TextStyle(
-                            color: AppColors.secondary,
-                            fontSize: 14,
-                          ),
+                          style: AppStyles.bodyText,
                         ),
                       ],
                     ),
@@ -210,10 +208,7 @@ class TechStackSection extends StatelessWidget {
                           ),
                           Text(
                             "I build scalable cross-platform applications using Flutter, Firebase, and clean state management practices.",
-                            style: TextStyle(
-                              color: AppColors.secondary,
-                              fontSize: 14,
-                            ),
+                            style: AppStyles.bodyText,
                           ),
                         ],
                       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:my_new_portfolio/core/constraints/app_styles.dart';
 
 class TechChips extends StatelessWidget {
   final String svgPicture;
@@ -28,11 +29,11 @@ class TechChips extends StatelessWidget {
           SvgPicture.asset(
             svgPicture,
             colorFilter: const ColorFilter.mode(Colors.cyan, BlendMode.srcIn),
-            width:isMobile?15: 22,
+            width: isMobile ? 15 : 22,
           ),
           SizedBox(width: 5),
           // Text
-          Text(iconText, style: TextStyle(fontSize: isMobile?12: 14),),
+          Text(iconText, style: AppStyles.bodyText),
         ],
       ),
     );

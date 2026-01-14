@@ -34,6 +34,7 @@ class ContactUs extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text("Get In Touch", style: AppStyles.heading2),
+                SizedBox(height: 5),
                 Text(
                   "Let's build something together :)",
                   style: AppStyles.bodyText,
@@ -56,6 +57,7 @@ class ContactUs extends StatelessWidget {
                         svgName: "assets/svgs/envelope-solid-full.svg",
                         lastSvgName:
                             "assets/svgs/location-arrow-solid-full.svg",
+                        onTapUrl: "mailto:khaliqhaqqaniirshd@gmail.com",
                       ),
                       SizedBox(height: 10),
                       ContactTiles(
@@ -64,6 +66,7 @@ class ContactUs extends StatelessWidget {
                         svgName: "assets/svgs/phone-solid-full.svg",
                         lastSvgName:
                             "assets/svgs/location-arrow-solid-full.svg",
+                        onTapUrl: 'http://wa.me/93554574313',
                       ),
                       SizedBox(height: 10),
 
@@ -73,6 +76,8 @@ class ContactUs extends StatelessWidget {
                         svgName: "assets/svgs/location-arrow-solid-full.svg",
                         lastSvgName:
                             "assets/svgs/location-arrow-solid-full.svg",
+                        onTapUrl:
+                            'https://www.google.com/maps/search/?api=1&query=Software+Technology+Park+Skardu',
                       ),
                       SizedBox(height: 10),
 
@@ -140,8 +145,10 @@ class ContactUs extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text("Get In Touch", style: AppStyles.heading2),
+                SizedBox(height: 5),
+
                 Text(
-                  "Let's build something together :)",
+                  "Let's build something together:)",
                   style: AppStyles.bodyText,
                 ),
               ],
@@ -163,13 +170,15 @@ class ContactUs extends StatelessWidget {
                           svgName: "assets/svgs/envelope-solid-full.svg",
                           lastSvgName:
                               "assets/svgs/location-arrow-solid-full.svg",
+                          onTapUrl: "mailto:khaliqhaqqaniirshd@gmail.com",
                         ),
                         ContactTiles(
                           heading: "Contact No",
-                          bodyText: "khaliqhaqqaniirshd@gmail.com",
+                          bodyText: "+923554574313",
                           svgName: "assets/svgs/phone-solid-full.svg",
                           lastSvgName:
                               "assets/svgs/location-arrow-solid-full.svg",
+                          onTapUrl: 'https://wa.me/923554574313',
                         ),
                         ContactTiles(
                           heading: "Location",
@@ -177,6 +186,8 @@ class ContactUs extends StatelessWidget {
                           svgName: "assets/svgs/location-arrow-solid-full.svg",
                           lastSvgName:
                               "assets/svgs/location-arrow-solid-full.svg",
+                          onTapUrl:
+                              'https://www.google.com/maps/search/?api=1&query=Software+Technology+Park+Skardu',
                         ),
                         Row(
                           children: [
@@ -202,7 +213,7 @@ class ContactUs extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         UserInput(inputHintText: 'Full Name*'),
-                        UserInput(inputHintText: 'Contact no*'),
+                        UserInput(inputHintText: 'Email*'),
                         UserInput(inputHintText: 'Message*'),
                         UserInputButton(),
                       ],
