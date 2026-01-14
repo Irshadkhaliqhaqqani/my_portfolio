@@ -12,7 +12,7 @@ class PerformanceAndMaintainanceSection extends StatelessWidget {
     final isMobile = MediaQuery.of(context).size.width < 800;
     return ResponsiveLayout(
       mobile: Padding(
-        padding: EdgeInsets.symmetric(horizontal: isMobile ? 20 : 80),
+        padding: EdgeInsets.symmetric(horizontal: 20),
         child: Container(
           constraints: BoxConstraints(maxWidth: 1140),
           child: Column(
@@ -43,7 +43,7 @@ class PerformanceAndMaintainanceSection extends StatelessWidget {
                         AppSizes.radiusMedium,
                       ),
                       child: Image.asset(
-                        "assets/background_vector.jpg",
+                        "assets/background_vector.webp",
                         width: double.infinity,
                         height: 200,
                         fit: BoxFit.cover,
@@ -78,7 +78,7 @@ class PerformanceAndMaintainanceSection extends StatelessWidget {
                   // Mobile Image
                   Positioned.fill(
                     bottom: 21,
-                    child: Image.asset("assets/iphone_image.png", height: 280),
+                    child: Image.asset("assets/iphone_image.webp", height: 280),
                   ),
 
                   // Right Content
@@ -131,11 +131,12 @@ class PerformanceAndMaintainanceSection extends StatelessWidget {
         ),
       ),
       desktop: Padding(
-        padding: EdgeInsets.symmetric(horizontal: isMobile ? 20 : 80),
+        padding: EdgeInsets.symmetric(horizontal: 80),
         child: Container(
           constraints: BoxConstraints(maxWidth: 1140),
           child: Column(
             children: [
+              SizedBox(height: 50),
               // Title
               Text(
                 "Performance & Maintenance",
@@ -161,7 +162,7 @@ class PerformanceAndMaintainanceSection extends StatelessWidget {
                         AppSizes.radiusMedium,
                       ),
                       child: Image.asset(
-                        "assets/background_vector.jpg",
+                        "assets/background_vector.webp",
                         width: double.infinity,
                         height: 250,
                         fit: BoxFit.cover,
@@ -256,7 +257,7 @@ class PerformanceAndMaintainanceSection extends StatelessWidget {
                   Positioned.fill(
                     bottom: 21,
 
-                    child: Image.asset("assets/iphone_image.png", height: 350),
+                    child: Image.asset("assets/iphone_image.webp", height: 350),
                   ),
 
                   // Right Content

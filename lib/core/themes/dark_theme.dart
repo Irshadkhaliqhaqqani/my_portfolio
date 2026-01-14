@@ -14,5 +14,5 @@ final ThemeData darkTheme= ThemeData(
   foregroundColor: Colors.white,
   centerTitle: true,
  ),
- textTheme: GoogleFonts.poppinsTextTheme().apply(bodyColor: Colors.white, displayColor: Colors.white),
+ textTheme: GoogleFonts.interTextTheme().apply(bodyColor: Colors.white, displayColor: Colors.white),
 );

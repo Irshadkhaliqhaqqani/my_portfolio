@@ -15,11 +15,11 @@ class ContactTiles extends StatelessWidget {
     required this.svgName,
     required this.lastSvgName,
   });
-  
+
   @override
   Widget build(BuildContext context) {
-    final isMobile=MediaQuery.of(context).size.width<800;
-    return  Row(
+    final isMobile = MediaQuery.of(context).size.width < 800;
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         // Icon
@@ -30,31 +30,33 @@ class ContactTiles extends StatelessWidget {
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: AppColors.secondary,
-                shape: BoxShape.circle
+                shape: BoxShape.circle,
               ),
               child: SvgPicture.asset(
                 svgName,
-                height:isMobile?22: 30,
+                height: isMobile ? 22 : 30,
                 colorFilter: const ColorFilter.mode(
                   Colors.white,
                   BlendMode.srcIn,
                 ),
               ),
             ),
-            SizedBox(width:isMobile?10: 20),
+            SizedBox(width: isMobile ? 10 : 20),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   heading,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize:isMobile?14: 16),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: isMobile ? 14 : 16,
+                  ),
                 ),
                 Text(bodyText, style: TextStyle(color: AppColors.secondary)),
               ],
             ),
           ],
         ),
-        
       ],
     );
   }

@@ -45,46 +45,44 @@ class MyHeroSection extends StatelessWidget {
         ],
       ),
       desktop: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 80),
-        child: Container(
-          constraints: BoxConstraints(
-            maxWidth: 1140
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              // first side
-              SizedBox(
-                height: 700,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // Hero titles
-                    Text(
-                      "Hi' I am",
-                      style: TextStyle(fontSize: 42, color: AppColors.secondary),
+        padding: const EdgeInsets.only(right: 80, top: 80, left: 80),
+        child: Row(
+          children: [
+            // first side
+            Expanded(
+              flex: 7,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Hero titles
+                  Text(
+                    "Hi' I am",
+                    style: TextStyle(fontSize: 42, color: AppColors.secondary),
+                  ),
+                  Text(AppStrings.PortfolioString, style: AppStyles.heroText),
+                  Text(
+                    "A Flutter Developer",
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: AppColors.secondary,
+                      fontStyle: FontStyle.italic,
                     ),
-                    Text(AppStrings.PortfolioString, style: AppStyles.heroText),
-                    Text(
-                      "A Flutter Developer",
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: AppColors.secondary,
-                        fontStyle: FontStyle.italic,
-                      ),
-                    ),
-                    // Social Media Platforms
-                    SocialMediaPlatformButtons(),
-                  ],
-                ),
+                  ),
+                  // Social Media Platforms
+                  SocialMediaPlatformButtons(),
+                ],
               ),
-              // second side
-              
-              // SizedBox(height: 700, child: MyProfileImage()),
-              Container(height: 650,width: 700,child:Center(child: MyProfileImage()) ,)
-            ],
-          ),
+            ),
+
+            // second side
+            Expanded(
+              flex: 5,
+              child: Center(
+                child: SizedBox(height: 500, child: MyProfileImage()),
+              ),
+            ),
+          ],
         ),
       ),
     );

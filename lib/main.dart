@@ -13,9 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'MyPortfolio',
-      theme: darkTheme ,
+      theme: darkTheme,
       home: HomePage(),
     );
   }
 }
-

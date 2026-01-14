@@ -125,7 +125,13 @@ class ContactUs extends StatelessWidget {
           horizontal: isMobile ? 10 : 60,
           vertical: isMobile ? 10 : 30,
         ),
-        color: Colors.black12,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+          color: Colors.black12,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

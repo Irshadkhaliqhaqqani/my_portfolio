@@ -11,7 +11,6 @@ Widget gradientCard2(BuildContext context, String text, Gradient gradient) {
 
     child: Stack(
       children: [
-        // Backdrop Effect
         // Backdrop Blur
         BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
@@ -22,7 +21,12 @@ Widget gradientCard2(BuildContext context, String text, Gradient gradient) {
 
         //Gradient
         Container(
-          padding: EdgeInsets.only(left: isMobile ? 4 : 180),
+          padding: EdgeInsets.only(
+            left: isMobile ? 10 : 150,
+            top: isMobile ? 10 : 0,
+            right: isMobile ? 10 : 0,
+            bottom: isMobile ? 10 : 0,
+          ),
           decoration: BoxDecoration(
             // gradient: gradient,
             borderRadius: BorderRadius.circular(16),

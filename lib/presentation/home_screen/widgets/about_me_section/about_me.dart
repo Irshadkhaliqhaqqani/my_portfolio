@@ -13,25 +13,23 @@ class AboutMe extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            SizedBox(height: 10,
-            ),
+            SizedBox(height: 10),
             Text(
               "About me",
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
             Text(
-              textAlign:TextAlign.center,
+              textAlign: TextAlign.center,
               "“If you are not going to tell the world who you are, the world is not going to tell you, how good you are.”",
               style: TextStyle(color: AppColors.secondary),
             ),
-            SizedBox(height: 10,),
-                      // Image
+            SizedBox(height: 10),
+            // Image
             Image.asset(
-              "assets/iosphone.png",
+              "assets/iosphone.webp",
               height: 200,
               fit: BoxFit.contain,
-            
             ),
             SizedBox(height: 10),
             // stack for About me Container
@@ -42,84 +40,62 @@ class AboutMe extends StatelessWidget {
       ),
       desktop: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 80),
-        child: Container(
-          constraints: BoxConstraints(
-            maxWidth: 1140
-          ),
+        child: SizedBox(
+          height: 800,
           child: Column(
             children: [
+              SizedBox(height: 10),
               Text(
                 "About me",
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 10),
               Text(
-                "“If you are not going to tell the world who you are, the world is not going to tell you, how good you are.”",
+                textAlign: TextAlign.center,
+                "“If you are not going to tell the world \nwho you are, the world is not going to tell you, how good you are.”",
                 style: TextStyle(color: AppColors.secondary),
               ),
-              // stack for About me Container
+              SizedBox(height: 50),
               Stack(
-                clipBehavior: Clip.none,
                 alignment: Alignment.center,
+                clipBehavior: Clip.none,
                 children: [
-                  Positioned(
-                    right: -300,
-                    top: 0,
-                    bottom: 0,
-                    child: Container(
-                      height: 500,
-                      width: 500,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0xFF8B00B4).withOpacity(0.4),
-                            spreadRadius:
-                                10, // How much the shadow grows larger than the box
-                            blurRadius: 150, // How soft the shadow edge is
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: -300,
-                    top: 0,
-                    bottom: 0,
-                    child: Container(
-                      height: 500,
-                      width: 500,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0xFF8B00B4).withOpacity(0.4),
-                            spreadRadius:
-                                10, // How much the shadow grows larger than the box
-                            blurRadius: 150, // How soft the shadow edge is
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  // GridView
+                  // glow circles
+                  Positioned(child: _GlowCircle()),
                   MyGridView(),
-                  // Image
-                  Image.asset(
-                    "assets/iosphone.png",
-                    height: 750,
-                    fit: BoxFit.contain,
-                    // cacheWidth: 100,
+                  Positioned(
+                    top: -50,
+                    child: Image.asset(
+                      "assets/iosphone.webp",
+                      height: 650,
+                      fit: BoxFit.contain,
+                    ),
                   ),
-                  // Conatner
                 ],
               ),
-              SizedBox(height: 40),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _GlowCircle extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 400,
+      width: 400,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xFF8B00B4).withOpacity(0.4),
+            blurRadius: 150,
+            spreadRadius: 10,
+          ),
+        ],
       ),
     );
   }

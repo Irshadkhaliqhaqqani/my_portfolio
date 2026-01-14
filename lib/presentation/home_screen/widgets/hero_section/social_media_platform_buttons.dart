@@ -22,21 +22,17 @@ class SocialMediaPlatformButtons extends StatelessWidget {
         ),
 
         boxShadow: [
-          BoxShadow(
-            color: Color(0xFF8B00B4).withOpacity(0.5),
-            blurRadius: 20,
-          
-          ),
+          BoxShadow(color: Color(0xFF8B00B4).withOpacity(0.5), blurRadius: 20),
         ],
       ),
       // Buttonss
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SocialMediaIcons(imageUrl: 'assets/linkedin (1).png', OnTap: () {}),
-          SocialMediaIcons(imageUrl: 'assets/social.png', OnTap: () {}),
-          SocialMediaIcons(imageUrl: 'assets/facebook (1).png', OnTap: () {}),
-          SocialMediaIcons(imageUrl: 'assets/instagram (1).png', OnTap: () {}),
+          SocialMediaIcons(imageUrl: 'assets/linkedin (1).webp', OnTap: () {}),
+          SocialMediaIcons(imageUrl: 'assets/social.webp', OnTap: () {}),
+          SocialMediaIcons(imageUrl: 'assets/facebook (1).webp', OnTap: () {}),
+          SocialMediaIcons(imageUrl: 'assets/instagram (1).webp', OnTap: () {}),
         ],
       ),
     );
