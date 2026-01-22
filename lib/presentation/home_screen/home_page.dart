@@ -38,7 +38,6 @@ class _HomePageState extends State<HomePage> {
 
     // Group keys into the list
     sectionKeys = [
-      // heroKey,
       aboutKey,
       techKey,
       performanceKey,
@@ -50,13 +49,31 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
-    // 2. Always dispose the controller to avoid memory leaks
     scrollController.dispose();
     super.dispose();
   }
 
+  // --- NEW: Helper function to handle Drawer Clicks ---
+  void _scrollToSection(int index) {
+    // 1. Close the drawer first
+    Navigator.of(context).pop();
+
+    // 2. Find the context of the target section
+    final targetContext = sectionKeys[index].currentContext;
+    if (targetContext != null) {
+      // 3. Scroll to that context
+      Scrollable.ensureVisible(
+        targetContext,
+        duration: const Duration(milliseconds: 800),
+        curve: Curves.easeInOutCubic,
+        alignment: 0, // Align to top
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.of(context).size.width < 800;
     return Scaffold(
       backgroundColor: AppColors.background,
       extendBodyBehindAppBar: true,
@@ -68,12 +85,30 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(color: Color(0xFF8B00B4)),
               child: Center(child: Text("Menu")),
             ),
-            ListTile(title: const Text("About"), onTap: () {}),
-            ListTile(title: const Text("Tech"), onTap: () {}),
-            ListTile(title: const Text("Performance"), onTap: () {}),
-            ListTile(title: const Text("Projects"), onTap: () {}),
-            ListTile(title: const Text("Experience"), onTap: () {}),
-            ListTile(title: const Text("Contact Us"), onTap: () {}),
+            ListTile(
+              title: const Text("About"),
+              onTap: () => _scrollToSection(0),
+            ),
+            ListTile(
+              title: const Text("Tech"),
+              onTap: () => _scrollToSection(1),
+            ),
+            ListTile(
+              title: const Text("Performance"),
+              onTap: () => _scrollToSection(2),
+            ),
+            ListTile(
+              title: const Text("Projects"),
+              onTap: () => _scrollToSection(3),
+            ),
+            ListTile(
+              title: const Text("Experience"),
+              onTap: () => _scrollToSection(4),
+            ),
+            ListTile(
+              title: const Text("Contact Us"),
+              onTap: () => _scrollToSection(5),
+            ),
           ],
         ),
       ),
@@ -82,6 +117,7 @@ class _HomePageState extends State<HomePage> {
       appBar: MyAppBar(
         scrollController: scrollController,
         sectionKeys: sectionKeys,
+        isMobile: isMobile,
       ),
 
       body: Align(

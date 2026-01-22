@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:my_new_portfolio/core/constraints/app_styles.dart';
 import 'package:my_new_portfolio/presentation/home_screen/widgets/about_me_section/gradient_cards_buttons.dart';
 
-Widget gradientCard2(BuildContext context, String text, Gradient gradient) {
+Widget GradientCard2(BuildContext context, String text, Gradient gradient) {
   final isMobile = MediaQuery.of(context).size.width < 800;
   return Container(
     width: isMobile ? double.infinity : MediaQuery.of(context).size.width * 0.4,

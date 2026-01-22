@@ -34,12 +34,12 @@ class TechStackSection extends StatelessWidget {
             svgPicture: "assets/svgs/firebase.svg",
           ),
           TechChips(
-            iconText: "Node JS",
-            svgPicture: "assets/svgs/nodedotjs.svg",
+            iconText: "Supabase",
+            svgPicture: "assets/svgs/supabase.svg",
           ),
           TechChips(
-            iconText: "REST APIs",
-            svgPicture: "assets/svgs/fastapi.svg",
+            iconText: "Node JS",
+            svgPicture: "assets/svgs/nodedotjs.svg",
           ),
         ],
       ),
@@ -47,6 +47,7 @@ class TechStackSection extends StatelessWidget {
         title: "State Management",
         chips: [
           TechChips(iconText: "Provider", svgPicture: "assets/svgs/p.svg"),
+          TechChips(iconText: "GetX", svgPicture: "assets/svgs/getx.svg"),
           TechChips(iconText: "RiverPod", svgPicture: "assets/svgs/r.svg"),
         ],
       ),

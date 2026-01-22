@@ -28,7 +28,7 @@ class AboutMe extends StatelessWidget {
               style: AppStyles.bodyText,
             ),
             // SizedBox(height: 50),
-            Container(
+            SizedBox(
               width: double.infinity,
               child: Column(
                 children: [
@@ -51,7 +51,7 @@ class AboutMe extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  gradientCard(
+                  GradientCard(
                     context,
                     "Intermediate from Boys Degree College Khalpu(ICS).\nGraduation from University of Baltistan Skardu(BSCS)",
                     LinearGradient(
@@ -62,7 +62,7 @@ class AboutMe extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  gradientCard2(
+                  GradientCard2(
                     context,
                     "Flutter & Mobile Development \nState Management (Provider, GetX) \nBackend & APIs (Firebase, REST) \nTools (Git, VS Code, Android Studio)",
                     LinearGradient(
@@ -81,81 +81,85 @@ class AboutMe extends StatelessWidget {
       ),
       desktop: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 80),
-        child: Column(
-          children: [
-            SizedBox(height: 50),
-            Text(
-              "About me",
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 5),
-            Text(
-              textAlign: TextAlign.center,
-              "“If you are not going to tell the world \nwho you are, the world is not going to tell you, how good you are.”",
-              style: AppStyles.bodyText,
-            ),
-            // SizedBox(height: 50),
-            Container(
-              width: double.infinity,
-              child: Stack(
-                alignment: Alignment.center,
-                clipBehavior: Clip.none,
-                children: [
-                  _GlowCircle(),
-                  Positioned(
-                    bottom: 40,
-                    left: 0,
-                    child: gradientCard(
-                      context,
-                      "Intermediate from Boys Degree College Khalpu(ICS).\nGraduation from University of Baltistan Skardu(BSCS)",
-                      LinearGradient(
-                        colors: [
-                          Color(0xFF101010).withOpacity(0.85),
-                          Color(0xFF262626).withOpacity(0.85),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    right: 0,
-                    top: 40,
-                    child: gradientCard2(
-                      context,
-                      "Flutter & Mobile Development \nState Management (Provider, GetX) \nBackend & APIs (Firebase, REST) \nTools (Git, VS Code, Android Studio)",
-                      LinearGradient(
-                        colors: [
-                          const Color(0xFF101010).withOpacity(0.85),
-                          const Color(0xFF262626).withOpacity(0.85),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 100,
-                    left: 0,
-                    child: textCard(
-                      "I’m Irshad Khaliq Haqqani, a Flutter Developer with 1.5 years of hands-on experience building cross-platform mobile applications. I’ve worked at Software Technology Park Skardu, delivering real-world apps for  business and service-based clients.",
-                      context,
-                    ),
-                  ),
-                  Positioned(
-                    right: 0,
-                    bottom: 100,
-                    child: textCard2(
-                      "I enjoy turning ideas into reliable products and collaborating closely with teams. Currently, I’m seeking junior or entry-level Flutter developer opportunities to grow and contribute to impactful mobile applications.",
-                      context,
-                    ),
-                  ),
-                  Image.asset(
-                    "assets/iosphone.webp",
-                    height: 550,
-                    fit: BoxFit.contain,
-                  ),
-                ],
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            children: [
+              SizedBox(height: 50),
+              Text(
+                "About me",
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
-            ),
-            SizedBox(height: 20),
-          ],
+              SizedBox(height: 5),
+              Text(
+                textAlign: TextAlign.center,
+                "“If you are not going to tell the world \nwho you are, the world is not going to tell you, how good you are.”",
+                style: AppStyles.bodyText,
+              ),
+              // SizedBox(height: 50),
+              SizedBox(
+                width: double.infinity,
+                child: Stack(
+                  alignment: Alignment.center,
+                  clipBehavior: Clip.none,
+                  children: [
+                    _GlowCircle(),
+
+                    Positioned(
+                      bottom: 40,
+                      left: 0,
+                      child: GradientCard(
+                        context,
+                        "Intermediate from Boys Degree College Khalpu(ICS).\nGraduation from University of Baltistan Skardu(BSCS)",
+                        LinearGradient(
+                          colors: [
+                            Color(0xFF101010).withOpacity(0.85),
+                            Color(0xFF262626).withOpacity(0.85),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      right: 0,
+                      top: 40,
+                      child: GradientCard2(
+                        context,
+                        "Flutter & Mobile Development \nState Management (Provider, GetX) \nBackend & APIs (Firebase, REST) \nTools (Git, VS Code, Android Studio)",
+                        LinearGradient(
+                          colors: [
+                            const Color(0xFF101010).withOpacity(0.85),
+                            const Color(0xFF262626).withOpacity(0.85),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 100,
+                      left: 0,
+                      child: TextCard(
+                        "I’m Irshad Khaliq Haqqani, a Flutter Developer with 1.5 years of hands-on experience building cross-platform mobile applications. I’ve worked at Software Technology Park Skardu, delivering real-world apps for  business and service-based clients.",
+                        context,
+                      ),
+                    ),
+                    Positioned(
+                      right: 0,
+                      bottom: 100,
+                      child: TextCard2(
+                        "I enjoy turning ideas into reliable products and collaborating closely with teams. Currently, I’m seeking junior or entry-level Flutter developer opportunities to grow and contribute to impactful mobile applications.",
+                        context,
+                      ),
+                    ),
+                    Image.asset(
+                      "assets/iosphone.webp",
+                      height: 550,
+                      fit: BoxFit.contain,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );

@@ -60,6 +60,16 @@ class ProjectSection extends StatelessWidget {
                       OnTap: () {},
                     ),
                     ProjectsCard(
+                      imageUrl: 'assets/Projects_images/p6.webp',
+                      cardHeader: 'Block Chain Expense App',
+                      OnTap: () {},
+                    ),
+                    ProjectsCard(
+                      imageUrl: 'assets/Projects_images/p7.webp',
+                      cardHeader: 'Shopper App',
+                      OnTap: () {},
+                    ),
+                    ProjectsCard(
                       imageUrl: 'assets/Projects_images/p2.webp',
                       cardHeader: 'Wallpaper App',
                       OnTap: () {},

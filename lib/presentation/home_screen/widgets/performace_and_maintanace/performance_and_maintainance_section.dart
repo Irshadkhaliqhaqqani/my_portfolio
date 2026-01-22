@@ -1,6 +1,5 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:my_new_portfolio/core/constraints/app_colors.dart';
 import 'package:my_new_portfolio/core/constraints/app_sizes.dart';
 import 'package:my_new_portfolio/core/constraints/app_styles.dart';
 import 'package:my_new_portfolio/core/responsive/responsive_layout.dart';

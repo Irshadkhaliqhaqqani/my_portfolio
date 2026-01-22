@@ -66,7 +66,7 @@ class ContactUs extends StatelessWidget {
                         svgName: "assets/svgs/phone-solid-full.svg",
                         lastSvgName:
                             "assets/svgs/location-arrow-solid-full.svg",
-                        onTapUrl: 'http://wa.me/93554574313',
+                        onTapUrl: 'http://wa.me/03554574313',
                       ),
                       SizedBox(height: 10),
 
@@ -178,7 +178,7 @@ class ContactUs extends StatelessWidget {
                           svgName: "assets/svgs/phone-solid-full.svg",
                           lastSvgName:
                               "assets/svgs/location-arrow-solid-full.svg",
-                          onTapUrl: 'https://wa.me/923554574313',
+                          onTapUrl: 'https://wa.me/03554574313',
                         ),
                         ContactTiles(
                           heading: "Location",

@@ -6,18 +6,20 @@ import 'package:my_new_portfolio/core/constraints/app_sizes.dart';
 class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
   final ScrollController scrollController;
   final List<GlobalKey> sectionKeys;
+  final bool isMobile;
 
   const MyAppBar({
     super.key,
     required this.scrollController,
     required this.sectionKeys,
+    required this.isMobile,
   });
 
   @override
   State<MyAppBar> createState() => _MyAppBarState();
 
   @override
-  Size get preferredSize => const Size.fromHeight(80);
+  Size get preferredSize => Size.fromHeight(isMobile ? 50 : 80);
 }
 
 class _MyAppBarState extends State<MyAppBar> {
@@ -144,8 +146,8 @@ class _MyAppBarState extends State<MyAppBar> {
         backgroundColor: Colors.transparent, // Clean transparency
         elevation: 0,
         flexibleSpace: ClipRect(
-          child: ImageFiltered(
-            imageFilter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 100, sigmaY: 100),
             child: Container(color: Colors.black.withOpacity(0.2)),
           ),
         ),
