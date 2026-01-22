@@ -27,8 +27,6 @@ Widget GradientCard(BuildContext context, String text, Gradient gradient) {
         ),
         const SizedBox(height: 8),
         Text(text, style: AppStyles.bodyText),
-        if (!isMobile) const SizedBox(height: 12),
-        if (isMobile) GradientCardsButtons(),
       ],
     ),
   );

@@ -32,9 +32,7 @@ class GradientCardsButtons extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
-
           splashColor: Colors.white.withOpacity(0.05),
-
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
             child: const Text(

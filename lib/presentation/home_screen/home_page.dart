@@ -106,7 +106,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () => _scrollToSection(4),
             ),
             ListTile(
-              title: const Text("Contact Us"),
+              title: const Text("Contact Me"),
               onTap: () => _scrollToSection(5),
             ),
           ],

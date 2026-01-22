@@ -98,7 +98,7 @@ class _MyAppBarState extends State<MyAppBar> {
     "Performance",
     "Project",
     "Experience",
-    "Contact Us",
+    "Contact Me",
   ];
   Widget menuItem(String title, int index) {
     final isActive = activeIndex == index;
@@ -154,7 +154,7 @@ class _MyAppBarState extends State<MyAppBar> {
         title: Text(
           "Ikhaqqani",
           style: GoogleFonts.cinzel(
-            color: const Color(0xFF8B00B4),
+            color: Colors.white,
             fontWeight: FontWeight.bold,
             fontSize: 22,
           ),
@@ -202,7 +202,7 @@ class _MyAppBarState extends State<MyAppBar> {
                         Text(
                           "Ikhaqqani",
                           style: GoogleFonts.greatVibes(
-                            color: const Color(0xFF8B00B4),
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 28, // Slightly larger for desktop
                           ),
